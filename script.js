@@ -1,5 +1,5 @@
 // Replace this with your backend URL deployed on Render
-const BACKEND_URL = "https://your-backend.onrender.com";
+const BACKEND_URL = "https://web3backend.onrender.com";
 
 async function connectWallet() {
   if (!window.ethereum) {
