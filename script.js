@@ -58,7 +58,7 @@ function runCanvasAnimation(canvas) {
   const ctx = canvas.getContext("2d");
   let x = 0;
 
-  function animate() {
+function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // Simple example: a moving square
