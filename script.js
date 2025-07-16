@@ -88,6 +88,8 @@ const frameSpeed = 8; // Increase to slow down animation (higher = slower)
   
     ctx.fillStyle = "orange";
     ctx.fillRect(x, 50, 50, 50);
+    
+    ctx.font = "20px Impact";
     ctx.fillStyle = 'green'
     ctx.fillText('TANG', x, 75);
   
@@ -104,4 +106,5 @@ const frameSpeed = 8; // Increase to slow down animation (higher = slower)
     requestAnimationFrame(animate);
   }
   animate();
+  }
 }
