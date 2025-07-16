@@ -90,8 +90,8 @@ const frameSpeed = 8;
     ctx.font = "40px Impact";
     ctx.fillStyle = 'white'
     ctx.textAlign = 'center'
-    ctx.fillText('Sequel Coming Soon', canvas.width/2, 120);
-    ctx.fillText('ENTER THE MOON TANG', canvas.width/2, 160);
+    ctx.fillText('Sequel Coming Soon', canvas.width/2, 200);
+    ctx.fillText('ENTER THE MOON TANG', canvas.width/2, 250);
   
     x += 2;
     if (x > canvas.width) x = -frameWidth;
