@@ -1,5 +1,5 @@
 // Replace this with your backend URL deployed on Render
-const BACKEND_URL = "https://web3backend.onrender.com";
+const BACKEND_URL = "https://web3backend-ahbi.onrender.com/verify";
 
 async function connectWallet() {
   if (!window.ethereum) {
@@ -30,7 +30,7 @@ async function connectWallet() {
 
     const result = await response.json();
 
-    if (result.accessGranted) {
+    if (result.success) {
       alert("✅ Welcome to the gated area!");
       // You can redirect or show protected content here
     } else {
