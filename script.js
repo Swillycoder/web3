@@ -45,4 +45,4 @@ async function connectWallet() {
 // Attach this to a button in your HTML:
 // <button id="connectWalletBtn">Connect Wallet</button>
 
-document.getElementById("connectWalletBtn").addEventListener("click", connectWallet);
+document.getElementById("connectButton").addEventListener("click", connectWallet);
