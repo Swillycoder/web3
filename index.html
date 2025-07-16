@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Token-Gated TANG</title>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.7.0/dist/ethers.umd.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: orange;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    #connectButton {
+      background-color: green;
+      color: white;
+      padding: 40px 60px;
+      border: 5px solid black;
+      border-radius: 15px;
+      font-family: 'Press Start 2P';
+      font-size: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #connectButton:hover {
+      background-color: darkgreen;
+    }
+
+    #status {
+      margin-top: 20px;
+      color: white;
+      font-weight: bold;
+    }
+
+    #gatedContent {
+      margin-top: 30px;
+      text-align: center;
+      color: white;
+    }
+
+    #prompt {
+      margin-top: 30px;
+      text-align: center;
+      color: white;
+      font-family: 'Press Start 2P';
+      font-size: 15px;
+    }
+
+    canvas {
+      display: none;
+      border: 1px solid #000;
+      margin-top: 20px;
+      
+    }
+  </style>
+</head>
+  
+<body>
+  <div id = "prompt">
+    <h1>Connect wallet to enter</h1>
+    <br>
+    <h2>You must have 1,000,000 $TANG in your wallet</h2>
+    <br>
+  </div>
+  <button id="connectButton">Connect Wallet</button>
+  <p id="status"></p>
+
+  <canvas id="canvas" width="600" height="400"></canvas>
+  
+  <div id="gatedContent" style="display: none;">
+    <h2>🎉 Welcome to the gated area!</h2>
+  </div>
+  
+  <script src="script.js"></script>
+  
+</body>
+</html>
