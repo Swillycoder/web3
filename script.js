@@ -32,10 +32,12 @@ async function connectWallet() {
 
     if (result.success) {
       document.getElementById("status").textContent = "";
-    
+      
       // Show the canvas
-      const canvas = document.getElementById("myCanvas");
+      const canvas = document.getElementById("canvas");
       canvas.style.display = "block";
+
+      document.getElementById("gatedContent").style.display = "block";
     
       // Run your canvas animation function
       runCanvasAnimation(canvas);
