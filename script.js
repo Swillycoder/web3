@@ -62,13 +62,31 @@ function runCanvasAnimation(canvas) {
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+    const image = 'https://raw.githubusercontent.com/Swillycoder/tang/main/run_r.png';
+    let frames = 0
+  
+    ctx.drawImage(
+            image,
+            36 * frames,
+            0,
+            36,
+            36,
+            x,
+            100,
+            36,
+            36
+          );
     // Simple example: a moving square
     ctx.fillStyle = "blue";
     ctx.fillRect(x, 50, 50, 50);
 
     x += 2;
     if (x > canvas.width) x = -50;
+
+    frames++
+
+    if(frames >= 4)
+      frames = 0;
 
     requestAnimationFrame(animate);
   }
