@@ -31,8 +31,15 @@ async function connectWallet() {
     const result = await response.json();
 
     if (result.success) {
-      alert("✅ Welcome to the gated area!");
-      // You can redirect or show protected content here
+      document.getElementById("status").textContent = "";
+    
+      // Show the canvas
+      const canvas = document.getElementById("myCanvas");
+      canvas.style.display = "block";
+    
+      // Run your canvas animation function
+      runCanvasAnimation(canvas);
+      
     } else {
       alert("❌ You do not have enough tokens to access this site.");
     }
@@ -46,3 +53,23 @@ async function connectWallet() {
 // <button id="connectWalletBtn">Connect Wallet</button>
 
 document.getElementById("connectButton").addEventListener("click", connectWallet);
+
+function runCanvasAnimation(canvas) {
+  const ctx = canvas.getContext("2d");
+  let x = 0;
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Simple example: a moving square
+    ctx.fillStyle = "blue";
+    ctx.fillRect(x, 50, 50, 50);
+
+    x += 2;
+    if (x > canvas.width) x = -50;
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+}
