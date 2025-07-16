@@ -76,7 +76,8 @@ const frameSpeed = 8; // Increase to slow down animation (higher = slower)
 
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-  
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0,0,600,600);
     ctx.drawImage(
       image,
       frameWidth * frames, 0,
@@ -85,8 +86,10 @@ const frameSpeed = 8; // Increase to slow down animation (higher = slower)
       frameWidth, frameHeight
     );
   
-    ctx.fillStyle = "blue";
+    ctx.fillStyle = "orange";
     ctx.fillRect(x, 50, 50, 50);
+    ctx.fillStyle = 'green'
+    ctx.fillText('TANG', x, 75);
   
     x += 2;
     if (x > canvas.width) x = -frameWidth;
