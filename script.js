@@ -77,7 +77,7 @@ const frameSpeed = 8; // Increase to slow down animation (higher = slower)
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = 'black';
-    ctx.fillRect(0,0,600,600);
+    ctx.fillRect(0,0,600,400);
     ctx.drawImage(
       image,
       frameWidth * frames, 0,
