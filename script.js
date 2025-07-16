@@ -105,6 +105,6 @@ const frameSpeed = 8; // Increase to slow down animation (higher = slower)
   
     requestAnimationFrame(animate);
   }
-  animate();
-  }
+    animate();
+  };
 }
