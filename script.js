@@ -92,6 +92,12 @@ const frameSpeed = 8; // Increase to slow down animation (higher = slower)
     ctx.font = "20px Impact";
     ctx.fillStyle = 'green'
     ctx.fillText('TANG', x, 75);
+
+    ctx.font = "40px Impact";
+    ctx.fillStyle = 'white'
+    ctx.textAlign = 'center'
+    ctx.fillText('Sequel Coming Soon', canvas.width/2, 120);
+    ctx.fillText('ENTER THE MOON TANG', canvas.width/2, 160);
   
     x += 2;
     if (x > canvas.width) x = -frameWidth;
