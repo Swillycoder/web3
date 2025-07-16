@@ -32,6 +32,7 @@ async function connectWallet() {
 
     if (result.success) {
       document.getElementById("connectButton").style.display = "none";
+      document.getElementById("prompt").style.display = "none";
       
       document.getElementById("status").textContent = "";
       
