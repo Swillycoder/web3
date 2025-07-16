@@ -5,13 +5,21 @@
   <title>Token-Gated Site with Signature</title>
   <script src="https://cdn.jsdelivr.net/npm/ethers@6.7.0/dist/ethers.umd.min.js"></script>
 </head>
+  
 <body>
+  
   <button id="connectButton">Connect Wallet</button>
   <p id="status"></p>
+
+  <canvas id="canvas" width="600" height="400" style="display:none; border:1px solid #000;"></canvas>
+  
   <div id="gatedContent" style="display: none;">
     <h2>🎉 Welcome to the gated area!</h2>
   </div>
+  
+  <script src="script.js"></script>
+  
 </body>
 
-<script src="script.js"></script>
+
 </html>
