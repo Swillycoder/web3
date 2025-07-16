@@ -35,13 +35,11 @@ async function connectWallet() {
       
       document.getElementById("status").textContent = "";
       
-      // Show the canvas
       const canvas = document.getElementById("canvas");
       canvas.style.display = "block";
 
       document.getElementById("gatedContent").style.display = "block";
     
-      // Run your canvas animation function
       runCanvasAnimation(canvas);
       
     } else {
@@ -52,9 +50,6 @@ async function connectWallet() {
     alert("Error connecting wallet or verifying token.");
   }
 }
-
-// Attach this to a button in your HTML:
-// <button id="connectWalletBtn">Connect Wallet</button>
 
 document.getElementById("connectButton").addEventListener("click", connectWallet);
 
@@ -67,12 +62,11 @@ function runCanvasAnimation(canvas) {
   let frames = 0;
   const frameWidth = 36;
   const frameHeight = 36;
-  const totalFrames = 4; // adjust if your sprite sheet has more frames
+  const totalFrames = 4;
 
-  // Wait until the image loads before animating
   image.onload = () => {
 let frameCounter = 0;
-const frameSpeed = 8; // Increase to slow down animation (higher = slower)
+const frameSpeed = 8;
 
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
