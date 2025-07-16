@@ -13,37 +13,5 @@
   </div>
 </body>
 
-<script>
-  const backendURL = "http://localhost:3000/verify"; // Replace with your backend URL
-  const status = document.getElementById("status");
-  const content = document.getElementById("gatedContent");
-
-  document.getElementById("connectButton").addEventListener("click", async () => {
-    if (!window.ethereum) {
-      alert("MetaMask is required.");
-      return;
-    }
-
-    const provider = new ethers.BrowserProvider(window.ethereum);
-    const signer = await provider.getSigner();
-    const address = await signer.getAddress();
-
-    const message = `Sign this message to prove ownership: ${Date.now()}`;
-    const signature = await signer.signMessage(message);
-
-    const response = await fetch(backendURL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ address, message, signature })
-    });
-
-    const result = await response.json();
-    if (result.success) {
-      status.innerText = "✅ Access granted.";
-      content.style.display = "block";
-    } else {
-      status.innerText = "❌ Access denied: not enough tokens.";
-    }
-  });
-</script>
+<script src="script.js"></script>
 </html>
