@@ -58,38 +58,42 @@ document.getElementById("connectButton").addEventListener("click", connectWallet
 
 function runCanvasAnimation(canvas) {
   const ctx = canvas.getContext("2d");
+  const image = new Image();
+  image.src = 'https://raw.githubusercontent.com/Swillycoder/web3/main/run_r.png';
+
   let x = 0;
+  let frames = 0;
+  const frameWidth = 36;
+  const frameHeight = 36;
+  const totalFrames = 4; // adjust if your sprite sheet has more frames
 
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    const image = 'https://raw.githubusercontent.com/Swillycoder/tang/main/run_r.png';
-    let frames = 0
-  
-    ctx.drawImage(
-            image,
-            36 * frames,
-            0,
-            36,
-            36,
-            x,
-            100,
-            36,
-            36
-          );
-    // Simple example: a moving square
-    ctx.fillStyle = "blue";
-    ctx.fillRect(x, 50, 50, 50);
+  // Wait until the image loads before animating
+  image.onload = () => {
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    x += 2;
-    if (x > canvas.width) x = -50;
+      // Draw current frame of the sprite
+      ctx.drawImage(
+        image,
+        frameWidth * frames, 0,     // Source x, y (frame position in the sprite sheet)
+        frameWidth, frameHeight,    // Source width, height (frame size)
+        x, 100,                     // Destination x, y on canvas
+        frameWidth, frameHeight     // Destination width, height on canvas
+      );
 
-    frames++
+      // You can keep your blue square or remove it
+      // ctx.fillStyle = "blue";
+      // ctx.fillRect(x, 50, 50, 50);
 
-    if(frames >= 4)
-      frames = 0;
+      x += 2;
+      if (x > canvas.width) x = -frameWidth;
 
-    requestAnimationFrame(animate);
+      frames++;
+      if (frames >= totalFrames) frames = 0;
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
   }
-
-  animate();
 }
