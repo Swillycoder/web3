@@ -31,6 +31,8 @@ async function connectWallet() {
     const result = await response.json();
 
     if (result.success) {
+      document.getElementById("connectButton").style.display = "none";
+      
       document.getElementById("status").textContent = "";
       
       // Show the canvas
@@ -81,9 +83,9 @@ function runCanvasAnimation(canvas) {
         frameWidth, frameHeight     // Destination width, height on canvas
       );
 
-      // You can keep your blue square or remove it
-      // ctx.fillStyle = "blue";
-      // ctx.fillRect(x, 50, 50, 50);
+      // Blue Square
+      ctx.fillStyle = "blue";
+      ctx.fillRect(x, 50, 50, 50);
 
       x += 2;
       if (x > canvas.width) x = -frameWidth;
