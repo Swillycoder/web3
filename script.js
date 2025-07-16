@@ -85,9 +85,9 @@ const frameSpeed = 8;
     ctx.fillRect(x, 50, 50, 50);
     
     ctx.font = "20px Impact";
-    ctx.textAlign = 'center'
+    ctx.textAlign = 'left'
     ctx.fillStyle = 'green'
-    ctx.fillText('TANG', x + 40, 75);
+    ctx.fillText('TANG', (x + 40), 75);
 
     ctx.font = "40px Impact";
     ctx.fillStyle = 'white'
