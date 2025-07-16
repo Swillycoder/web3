@@ -71,31 +71,33 @@ function runCanvasAnimation(canvas) {
 
   // Wait until the image loads before animating
   image.onload = () => {
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+let frameCounter = 0;
+const frameSpeed = 8; // Increase to slow down animation (higher = slower)
 
-      // Draw current frame of the sprite
-      ctx.drawImage(
-        image,
-        frameWidth * frames, 0,     // Source x, y (frame position in the sprite sheet)
-        frameWidth, frameHeight,    // Source width, height (frame size)
-        x, 100,                     // Destination x, y on canvas
-        frameWidth, frameHeight     // Destination width, height on canvas
-      );
-
-      // Blue Square
-      ctx.fillStyle = "blue";
-      ctx.fillRect(x, 50, 50, 50);
-
-      x += 2;
-      if (x > canvas.width) x = -frameWidth;
-
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+    ctx.drawImage(
+      image,
+      frameWidth * frames, 0,
+      frameWidth, frameHeight,
+      x, 100,
+      frameWidth, frameHeight
+    );
+  
+    ctx.fillStyle = "blue";
+    ctx.fillRect(x, 50, 50, 50);
+  
+    x += 2;
+    if (x > canvas.width) x = -frameWidth;
+  
+    frameCounter++;
+    if (frameCounter >= frameSpeed) {
       frames++;
       if (frames >= totalFrames) frames = 0;
-
-      requestAnimationFrame(animate);
+      frameCounter = 0;
     }
-
-    animate();
+  
+    requestAnimationFrame(animate);
   }
 }
